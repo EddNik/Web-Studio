@@ -49,6 +49,10 @@ img {
   height: auto;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* common */
 .container {
   max-width: 1158px;
@@ -69,30 +73,11 @@ img {
   overflow: hidden;
 }
 
-.section {
-  padding: 120px 0;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  color: var(--headers-color);
-  text-transform: capitalize;
-  text-align: center;
-  margin: 0 auto 72px;
-}
-
-.social-icon {
-  fill: var(--team-bg);
-}
-
 /* header */
 .site-header {
   border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 1px 6px 0 #2e2f4214, 0 1px 1px 0 #2e2f4229, 0 2px 1px 0 #2e2f4214;
+  box-shadow: 0 1px 6px 0 #2e2f4214, 0 1px 1px 0 #2e2f4229,
+    0 2px 1px 0 #2e2f4214;
 }
 
 /* Логотип */
@@ -114,7 +99,7 @@ img {
 
 /* Навігація */
 .container.nav-container,
-.site-header-navigation,
+.header-navigation,
 .navigation-list,
 .contacts-list,
 .feature-list,
@@ -125,7 +110,7 @@ img {
 }
 
 .nav-container,
-.site-header-navigation {
+.header-navigation {
   margin-right: auto;
 }
 
@@ -134,9 +119,9 @@ img {
   gap: 40px;
 }
 
-.navigation-link,
-.contacts-link,
-.header-logo {
+/* .navigation-link, */
+.contacts-link
+/* .header-logo  */ {
   padding: 24px 0;
 }
 
@@ -149,6 +134,10 @@ img {
   color: var(--headers-color);
   position: relative;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navigation-link.current {
+  color: var(--hover-focus);
 }
 
 .navigation-link::after {
@@ -176,10 +165,6 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navigation-link.current {
-  color: var(--hover-focus);
-}
-
 .navigation-link:hover,
 .navigation-link:focus,
 .contacts-link:hover,
@@ -191,12 +176,33 @@ img {
   opacity: 1;
 }
 
+/* sections */
 .section.hero-image,
 .page-footer {
   background-color: var(--secondary-bg);
 }
 
 /* Спеціалізація */
+.section {
+  padding: 120px 0;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--headers-color);
+  text-transform: capitalize;
+  text-align: center;
+  margin: 0 auto 72px;
+}
+
+.social-icon {
+  fill: var(--team-bg);
+}
+
 .section.hero-image {
   padding: 188px 0;
   background-image: linear-gradient(to bottom, #2e2f42b3, #2e2f42b3),
@@ -223,7 +229,6 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--text-opposite);
-  cursor: pointer;
   text-align: center;
   display: block;
   padding: 16px 32px;
@@ -280,7 +285,7 @@ img {
   margin-bottom: 8px;
 }
 
-.person-card {
+.team-member-card {
   padding-top: 32px;
   padding-bottom: 32px;
   border: 1px solid var(--border-color);
@@ -301,8 +306,12 @@ img {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16),
-    0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.our-team-item:hover {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .team-social-list {
@@ -355,8 +364,8 @@ img {
 }
 
 .our-portfolio-item:hover {
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16),
-    0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 .overlay {
   position: relative;
@@ -389,9 +398,9 @@ img {
   margin-bottom: 16px;
 }
 
-.page-footer {
+/* .page-footer {
   padding: 100px 0;
-}
+} */
 
 .page-footer-text {
   max-width: 264px;
@@ -417,9 +426,9 @@ img {
   max-width: 208px;
   margin-right: 80px;
 }
-.footer-social-item {
+/* .footer-social-item {
   width: calc((100% - 3 * 16px) / 4);
-}
+} */
 
 /* Subscribe form */
 .footer-subscribe-box {
@@ -432,6 +441,17 @@ img {
   margin-bottom: 16px;
   color: var(--primary-bg);
   font-weight: 500;
+}
+
+/* Доброго дня, Едуард) завдання зараховую) тільки для .footer-form-input не потрібно задавати марджин */
+
+.footer-form {
+  border: 1px solid #212121;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
 
 .footer-form-input {
@@ -449,7 +469,7 @@ img {
   line-height: 2;
   letter-spacing: 0.04em;
   outline: none;
-  margin-right: 24px;
+  /* margin-right: 24px; */
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -481,7 +501,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -490,7 +509,7 @@ img {
   margin-left: 16px;
 }
 
-.footer-subscribe-button {
+/* .footer-subscribe-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -505,15 +524,7 @@ img {
   letter-spacing: 0.04em;
   text-align: center;
   color: var(--primary-bg);
-}
-.footer-form {
-  border: 1px solid #212121;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-}
+} */
 
 .footer-social-list {
   display: flex;
@@ -557,7 +568,7 @@ img {
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-open {
+.backdrop.open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -578,7 +589,7 @@ img {
   padding: 72px 24px 24px;
 }
 
-.backdrop:not(.is-open) .modal {
+.backdrop:not(.open) .modal {
   transform: translate(-50%, -50%);
 }
 
@@ -596,7 +607,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   stroke-width: 1px;
   stroke: rgba(0, 0, 0, 0.1);
   background-color: var(--border-color);
@@ -604,11 +614,11 @@ img {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.is-hidden {
+/* .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-}
+} */
 
 .icon-close {
   fill: var(--headers-color);
@@ -737,7 +747,8 @@ img {
   width: 16px;
   height: 16px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   align-items: center;
   justify-content: center;
   fill: transparent;
