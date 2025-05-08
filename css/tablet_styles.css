@@ -83,4 +83,98 @@
     color: var(--hover-focus);
     opacity: 1;
   }
+
+  /* Hero Image section */
+
+  .hero-image {
+    padding: 112px 0;
+    max-width: 768px;
+    background-image: linear-gradient(to bottom, #2e2f42b3, #2e2f42b3),
+      url(../images/people-office-tablet.jpg);
+  }
+
+  @media screen and (min-resolution: 192dpi) {
+    .hero-image {
+      background-image: linear-gradient(to bottom, #2e2f42b3, #2e2f42b3),
+        url(../images/people-office-tablet@2x.jpg);
+    }
+  }
+
+  .hero-image-title {
+    color: var(--primary-bg);
+    margin-bottom: 36px;
+    max-width: 496px;
+    text-transform: none;
+    font-size: 56px;
+    line-height: 1.1;
+  }
+
+  /* Features section */
+
+  .feature-list {
+    gap: 72px 24px;
+  }
+
+  .feature-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  /* Team section */
+
+  .our-team-list {
+    gap: 64px 24px;
+  }
+
+  /* Portfolio */
+
+  .our-portfolio-list {
+    gap: 72px 24px;
+  }
+
+  .our-portfolio-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  /* Footer */
+
+  .footer-container {
+    gap: 72px 24px;
+    padding-left: 108px;
+    padding-right: 108px;
+  }
+
+  .footer-social-title,
+  .footer-logo {
+    text-align: left;
+  }
+
+  .footer-subscribe-box {
+    max-width: 453px;
+  }
+
+  .footer-social-box {
+    margin: 0;
+  }
+
+  .footer-form {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .page-footer-text {
+    max-width: 264px;
+  }
+  .footer-form-input {
+    margin-bottom: 0;
+    width: 264px;
+  }
+
+  /* modal_window */
+
+  .modal {
+    width: 408px;
+    min-height: 584px;
+    top: 37%;
+  }
 }
