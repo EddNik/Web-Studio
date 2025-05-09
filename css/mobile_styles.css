@@ -52,8 +52,6 @@ button {
   cursor: pointer;
 }
 
-/* common */
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -130,6 +128,7 @@ button {
 }
 
 /** Navigation **/
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -153,6 +152,7 @@ button {
 }
 
 /* mobile modal window*/
+
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -199,7 +199,6 @@ button {
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: var(--headers-color);
-  /* position: relative; */
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -276,6 +275,7 @@ button {
 }
 
 /* sections */
+
 .section {
   padding: 96px 0;
   margin: 0 auto;
@@ -330,7 +330,6 @@ button {
   color: var(--primary-bg);
   text-align: center;
   display: block;
-  /* padding: 16px 32px; */
   border: none;
   min-width: 169px;
   height: 56px;
@@ -368,6 +367,7 @@ button {
 }
 
 /* Team section */
+
 .our-team {
   background-color: var(--team-bg);
 }
@@ -440,11 +440,6 @@ button {
   flex-wrap: wrap;
   gap: 72px;
 }
-
-/* .footer-logo-wrapper {
-  display: flex;
-  flex-direction: column;
-} */
 
 .footer-logo {
   display: inline-block;
@@ -537,6 +532,7 @@ button {
 }
 
 /* modal_window */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -559,7 +555,7 @@ button {
 
 .modal {
   position: absolute;
-  top: 32%;
+  top: 48%;
   left: 50%;
   width: 288px;
   min-height: 623px;
@@ -729,6 +725,7 @@ button {
   align-items: center;
   justify-content: center;
   fill: transparent;
+  flex-shrink: 0;
 }
 
 .label-privacy {
@@ -738,6 +735,9 @@ button {
   letter-spacing: 0.04em;
   color: #8e8f99;
   gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-checkbox-input:checked + .label-privacy .form-checkmark {
