@@ -242,7 +242,9 @@
 - [HTML reference](https://htmlreference.io/) - безкоштовний інтерактивний
   довідник з HTML від творців
 
-- [netlify.com](https://www.netlify.com/) - Посилання на Netlify   
+- [netlify.com](https://www.netlify.com/) - Посилання на Netlify
+
+- [pagespeed](https://pagespeed.web.dev/) - как ускорить загрузку своих страниц на любых устройствах.
 
 ---
 
