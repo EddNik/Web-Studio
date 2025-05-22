@@ -246,6 +246,8 @@
 
 - [pagespeed](https://pagespeed.web.dev/) - как ускорить загрузку своих страниц на любых устройствах.
 
+- [favicon](https://favicon.io/favicon-converter/) - Favicon converter .svg, .ico + webmanifest.gson
+
 ---
 
 ## 🧰 SVG-спрайт
