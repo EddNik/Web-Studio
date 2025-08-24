@@ -3,45 +3,52 @@
 - Adding JS was my own decision to add functionality to the site.
 
 
+### 👩‍🏫 Adaptive Design
 
-### 👩‍🏫 Адаптивний дизайн
+A comprehensive guide to responsive and adaptive web design, covering media queries, mobile-first approach, and responsive images.
 
-- медіа-запити: media-type та media-feature
-- логічні оператори: and, not, or
-- метатег viewport
-- Chrome DevTools для роботи з мобільною версткою
-- адаптивна і респонсивна верстка
-- підхід mobile-first CSS
+### Table of Contents
 
----
+- [Overview](#overview)
+- [Chrome DevTools](#chrome-devtools)
+- [Media Queries](#media-queries)
+- [Media Types](#media-types)
+- [Logical Operators](#logical-operators)
+- [Mobile-First Approach](#mobile-first-approach)
+- [Adaptive Graphics](#adaptive-graphics)
+- [Responsive Images](#responsive-images)
+- [Background Images](#background-images)
+- [Additional Resources](#additional-resources)
 
-#### 1. Адаптивність (adaptive)
+### Overview
 
-**Адаптивна верстка** — створення кількох варіантів макетів під різні пристрої
-(десктоп, планшет, мобільний).  
-**Респонсивна верстка** — один макет, який змінює структуру/стилі в залежності
-від ширини екрана.
+#### Adaptive vs Responsive Design
 
----
+- **Adaptive Layout** — Creating multiple layout variants for different devices (desktop, tablet, mobile)
+- **Responsive Layout** — One layout that changes structure/styles depending on screen width
 
-#### 2. DevTools
+Key concepts covered:
+- Media queries: media-type and media-feature
+- Logical operators: and, not, or
+- Viewport meta tag
+- Chrome DevTools for mobile development
+- Mobile-first CSS approach
 
-Інструменти розробника у браузері Chrome дозволяють:
+### Chrome DevTools
 
-- перевіряти медіа-запити
-- переглядати мобільну версію сторінки
-- дебажити адаптивну верстку
+Chrome Developer Tools allow you to:
+- Test media queries
+- Preview mobile versions of pages
+- Debug adaptive layouts
 
----
+### Media Queries
 
-#### 3. Медіа-запити
+#### Basic Properties
 
-##### Основні властивості:
+- `min-width` — Styles apply **from** the specified size and up
+- `max-width` — Styles apply **up to** the specified size
 
-- `min-width` — стилі застосовуються **від** вказаного розміру
-- `max-width` — стилі застосовуються **до** вказаного розміру
-
-##### Приклад:
+#### Example
 
 ```css
 @media screen and (max-width: 600px) {
@@ -51,104 +58,86 @@
 }
 ```
 
-##### Перевизначення стилів / каскадування:
+#### Style Overriding / Cascading
 
-Стилі з media-запитів можуть перекривати базові стилі. Важливо дотримуватись
-порядку і специфічності.
+Styles from media queries can override base styles. It's important to maintain proper order and specificity.
 
----
+### Media Types
 
-#### 4. Медіа-типи
+#### `screen`
+Most common type. Applied to displays: monitors, tablets, phones, etc.
+```css
+@media screen and (max-width: 600px) { /* styles */ }
+```
 
-- `screen`  
-  Це найпоширеніший тип. Застосовується до дисплеїв: монітори, планшети,
-  телефони тощо.  
-  `@media screen and (max-width: 600px) {...}`
+#### `print`
+Applied when the page is printed or viewed in print preview mode.
+```css
+@media print { /* styles */ }
+```
 
-- `print`  
-  Застосовується, коли сторінка друкується або переглядається в режимі
-  попереднього перегляду друку.  
-  `@media print {...}`
+#### `all`
+Applied to all media types (screens, print, speech, etc.).
+```css
+@media all and (min-width: 800px) { /* styles */ }
+```
 
-- `all`  
-  Застосовується до всіх типів медіа (екрани, друк, голосові тощо).  
-  `@media all and (min-width: 800px) {...}`
+#### `only`
+Protective keyword. Applies styles only if the browser supports media queries.
+```css
+@media only screen and (max-width: 600px) { /* styles */ }
+```
 
-- `only`  
-  Захисне ключове слово. Застосовує стилі тільки якщо браузер підтримує
-  медіа-запит.  
-  `@media only screen and (max-width: 600px) {...}`
+#### `not`
+Negation: applies styles to everything except the specified media type.
+```css
+@media not print { /* styles */ }
+```
 
-- `not`  
-  Заперечення: застосовує стилі до всього, крім вказаного типу медіа.  
-  `@media not print {...}`
+### Logical Operators
 
----
+#### `and`
+```css
+@media screen and (min-width: 400px) and (max-width: 800px) { /* styles */ }
+```
 
-#### 5. Логічні оператори (and, or, not)
+#### `or` (comma `,`)
+```css
+@media screen and (max-width: 600px), (min-width: 900px) { /* styles */ }
+```
 
-- **and**  
-  `@media screen and (min-width: 400px) and (max-width: 800px)`
-- **or ( , )**  
-  `@media screen and (max-width: 600px), (min-width: 900px)`
-- **not**  
-  `@media not print`
+#### `not`
+```css
+@media not print { /* styles */ }
+```
 
----
+### Mobile-First Approach
 
-#### 6. Mobile-first підхід
+An approach where you first create a design for mobile devices, then gradually add support for larger screens:
 
-Підхід, при якому спочатку створюється дизайн для мобільних пристроїв, а потім
-поступово додається підтримка для більших екранів:
+| Device   | Screen Size     |
+|----------|-----------------|
+| Mobile   | 0 – 767px       |
+| Tablet   | 768 – 1023px    |
+| Desktop  | 1024px and up   |
 
-| Пристрій | Розмір екрана   |
-| -------- | --------------- |
-| Мобільні | 0 – 767px       |
-| Планшети | 768 – 1023px    |
-| Десктопи | 1024px і більше |
+## Adaptive Graphics
 
----
+Adaptive images and background images that change depending on screen resolution.
 
-#### 7. Адаптивна графіка
+### Responsive Images
 
-Адаптивні зображення та фонові зображення, що змінюються залежно від роздільної
-здатності екрану.
-
----
-
-#### 8. Респонсивні зображення
+#### Basic Responsive Image
 
 ```html
 <img
   srcset="./img/photo.jpg 1x, ./img/photo@2x.jpg 2x"
   src="./img/photo.jpg"
-  alt="Опис зображення для всіх версій"
+  alt="Image description for all versions"
 />
 ```
 
----
-
-#### 9. Фонові зображення
-
-```css
-@media (min-resolution: 192dpi) {
-  .box {
-    background-image: url('photo@2x.png');
-  }
-}
-```
-
-> ⚠️ 96dpi — стандартна щільність. Для Retina/HiDPI — 192dpi (2x). 1x img
-> (96dpi), 2x (192pdi), 3x (288dpi)
-
-### 7. Адаптивна графіка
-
-Адаптивні зображення та фонові зображення, що змінюються залежно від роздільної
-здатності екрану.
-
----
-
-#### 8. Респонсивні зображення
+#### Advanced Example with Picture Element
 
 ```html
 <img
@@ -176,9 +165,9 @@
 </picture>
 ```
 
----
+### Background Images
 
-#### 9. Фонові зображення
+#### High-Resolution Background Images
 
 ```css
 @media (min-resolution: 192dpi) {
@@ -199,65 +188,53 @@
 }
 ```
 
-#### 🔹 Додаткові ресурси 📚
+> ⚠️ **Note:** 96dpi is standard density. For Retina/HiDPI use 192dpi (2x). 1x img (96dpi), 2x (192dpi), 3x (288dpi)
 
-- 🖼 [dashly-theme](https://dashly-theme.com/account.html) – приклад використання
-  форм
-- 🖼 [ant.design](https://ant.design/components/overview/) – одна з популярних js
-  бібліотек з різними компонентами
-- Особливості inline-block елементів -
-  https://css-tricks.com/fighting-the-space-between-inline-block-elements/
-- Повний посібник з Flexbox -
-  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-- Гра по Flexbox - http://flexboxfroggy.com/
-- Ще одна гра на вивчення флексів https://mastery.games/flexboxzombies/
-- Специфікація - https://developer.mozilla.org/en-US/docs/Web/CSS
-- Слова, які часто використовуються в CSS-класах -
-  https://github.com/YK911/basic-dictionary
-- Плагін, який аналізує відразу всі шрифти макета
-  https://www.youtube.com/watch?v=6nKQsgiNIFc
-- Шукати плагін можна як у відео чи простіше: Головне меню Figma -> Plugins ->
-  Manage plugins -> Font Fascia
-- Посилання на довідник по HTML і CSS https://css.in.ua/
-- https://cdnjs.com/libraries/modern-normalize
+### Additional Resources
 
-- 🖼 [Remove.bg](https://www.remove.bg/) – сервіс для видалення фону із зображень
-- 🛠 [iLoveIMG](https://www.iloveimg.com/) – інструменти для обробки зображень
-- ✅ [W3C Validator](https://validator.w3.org/) – перевірка HTML-коду на
-  помилки -[CSS Validator](https://jigsaw.w3.org/css-validator/) - CSS validator
-- 📖 [MDN HTML Docs](https://developer.mozilla.org/en-US/docs/Web/HTML) –
-  офіційна документація HTML
+#### 🔹 Design & Components
+- 🖼 [Dashly Theme](https://dashly-theme.com/account.html) – Form usage examples
+- 🖼 [Ant Design](https://ant.design/components/overview/) – Popular JS component library
 
-- 🖼 [toptal.com](https://www.toptal.com/designers/htmlarrows/symbols/) –
-  спеціальні символи
-- 🛠 [Caninclude](https://caninclude.glitch.me/) – чи можу вкласти тег в інший
-  тег
-- 📖 [Emmet commands](https://docs.emmet.io/cheat-sheet/) – швидкі команди emmet
-- 📖 [MDN HTML Docs](https://developer.mozilla.org/en-US/docs/Web/HTML) –
-  офіційна документація
+#### 🔹 CSS Learning Resources
+- [Inline-block elements peculiarities](https://css-tricks.com/fighting-the-space-between-inline-block-elements/)
+- [Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Flexbox Froggy](http://flexboxfroggy.com/) – Flexbox learning game
+- [Flexbox Zombies](https://mastery.games/flexboxzombies/) – Another flexbox game
+- [CSS Specification](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [CSS Class Dictionary](https://github.com/YK911/basic-dictionary) – Common CSS class words
+- [CSS Reference](https://css.in.ua/) – HTML & CSS handbook
+- [Modern Normalize](https://cdnjs.com/libraries/modern-normalize)
 
-- 🛠 [Squoosh](https://squoosh.app/) – Оптимізація картинок (jpeg)
-- 🛠 [Tiny PNG](https://tinypng.com/) – Оптимізація картинок (png)
+#### 🔹 Tools & Utilities
+- 🖼 [Remove.bg](https://www.remove.bg/) – Background removal service
+- 🛠 [iLoveIMG](https://www.iloveimg.com/) – Image processing tools
+- 🛠 [Squoosh](https://squoosh.app/) – Image optimization (JPEG)
+- 🛠 [TinyPNG](https://tinypng.com/) – Image optimization (PNG)
+- 🛠 [Caninclude](https://caninclude.glitch.me/) – Check if one tag can be nested in another
 
-- 📖
-  [Figma Template](https://www.figma.com/design/LWMTodUscRGMcbTpxE3kgI/Simply-Chocolate?node-id=1-5060&t=FZ9D8VYSe7z6EkSG-0)
-  – Figma
+#### 🔹 Validators & Testing
+- ✅ [W3C HTML Validator](https://validator.w3.org/) – HTML code validation
+- ✅ [CSS Validator](https://jigsaw.w3.org/css-validator/) – CSS validation
+- [PageSpeed](https://pagespeed.web.dev/) – Website speed optimization
 
-- [HTML reference](https://htmlreference.io/) - безкоштовний інтерактивний
-  довідник з HTML від творців
+#### 🔹 Development Resources
+- 🖼 [HTML Arrows](https://www.toptal.com/designers/htmlarrows/symbols/) – Special characters
+- 📖 [Emmet Cheat Sheet](https://docs.emmet.io/cheat-sheet/) – Quick Emmet commands
+- 📖 [MDN HTML Documentation](https://developer.mozilla.org/en-US/docs/Web/HTML) – Official HTML docs
+- [HTML Reference](https://htmlreference.io/) – Interactive HTML reference
 
-- [netlify.com](https://www.netlify.com/) - Посилання на Netlify
+#### 🔹 Deployment & Hosting
+- [Netlify](https://www.netlify.com/) – Static site hosting
+- [Favicon Converter](https://favicon.io/favicon-converter/) – SVG, ICO + webmanifest.json
 
-- [pagespeed](https://pagespeed.web.dev/) - как ускорить загрузку своих страниц на любых устройствах.
+#### 🔹 Design Tools
+- 📖 [Figma Template](https://www.figma.com/design/LWMTodUscRGMcbTpxE3kgI/Simply-Chocolate?node-id=1-5060&t=FZ9D8VYSe7z6EkSG-0) – Design template
 
-- [favicon](https://favicon.io/favicon-converter/) - Favicon converter .svg, .ico + webmanifest.gson
+#### 🧰 SVG Sprites
+- Generate via: [IcoMoon](https://icomoon.io/app/)
+- SVG Optimization: [SVGOMG](https://svgomg.net/)
 
----
-
-#### 🧰 SVG-спрайт
-
-- Генерація через: [icomoon.io/app](https://icomoon.io/app/)
-- Оптимізація SVG: [svgomg.net](https://svgomg.net/)
 
 - `<svg class="class-name" width="24" height="24">`
   `<use href="./sprite.svg#icon-instagram"></use>` `</svg>`
